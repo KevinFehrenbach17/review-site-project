@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bowlby One SC' rel='stylesheet'>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<title th:text="${review.name}">Boat Reviews</title>
+	<link href ="review-site.css" rel="stylesheet" type="text/css">
+<body>
+  <header>
+    <a href=#>Home</a>
+    <a href=reviews.html>Reviews</a>
+    <a href=#>Contact Us</a>
+  </header>
+  <div id="title">
+    <h1 th:text="${review.name}">Boat Reviews</h1>
+  </div>
+
+  <div id="subtitle">
+    <h2> Do you like boats but know nothing about them? If you live in Central Ohio, you probably dont know anything about boats.</h2>
+    <h2>This site is designed for you to know what boat will be right for you, based on what you want to do with it, price, etc.</h2>
+
+    <div class="home">
+      <img src="HomePageBoat.jpg"></img>
+    </div>
+
+
+    	<h3>Boat Name</h3>
+
+      <nav>
+
+          <ul>
+                <li th:href="/reviews">Some Boats</li>
+
+                <li th:each="review : ${reviews}"><a th:href="|/reviews/${review.rating}|"th:text="${review.name}">Boat</a></li>
+
+          </ul>
+
+      </nav>
+
+      
+
+
+
+      <img class = "rboat"src ="http://www.wakeworld.com/news/images/BoatGuide519.jpg"></img>
+
+      
+    <footer>fuck your chicken strips</footer>
+
+</html>

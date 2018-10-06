@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>reviews</title>
+</head>
+<body>
+  <header>
+    <h1>reviews</h1>
+    <nav>
+      <ul>
+        <li><a href="/reviews">Some reviews</a></li>
+        <li th:each="review : ${reviews}"><a th:href="|/reviews/${review.rating}|" th:text="${review.name}">review</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <ul>
+      <li th:each="review : ${reviews}"><a th:href="|/reviews/${review.rating}|" th:text="${review.name}">review</a></li>
+    </ul>
+  </main>
+  <footer>
+    <small>&copy; WCCI 2018</small>
+  </footer>
+</body>
+</html>
