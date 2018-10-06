@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class ReviewController {
 
 	@Resource
-	private ReviewRepository reviewReop;
 
 	private ReviewRepository reviewRepo = new ReviewRepository();
 
@@ -22,12 +21,12 @@ public class ReviewController {
 		return "reviews";
 	}
 
-	@GetMapping("/reviews/{Rating}")
+	@GetMapping("/reviews/{rating}")
 	public String getReview(@PathVariable(value = "rating") Long rating, Model model) {
 		System.out.println(reviewRepo.findOne(rating));
 		model.addAttribute("review", reviewRepo.findOne(rating));
 
-		return "reviews";
+		return "review";
 	}
 
 }

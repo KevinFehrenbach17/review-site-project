@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="${reviews.name}">Review</title>
+	<!-- Do something useful with a students id -->
+</head>
+<body>
+	<header>
+		<h1 th:text="${reviews.name}">Review</h1><!-- Name -->
+		<nav>
+			<ul>
+				<li><a href="/reviews">Review</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h3 th:text="${reviews.description}">Description</h3><!-- favorite food -->
+		<!--
+			This is (imo) the best way to concatenate
+			in Thymeleaf
+		-->
+		<h3 th:text="${reviews.rating}">rating</h3><!-- GitHub Link -->
+	</main>
+	<footer>
+		<small>&copy; WCCI 2018</small>
+	</footer>
+</body>
+</html>

@@ -5,11 +5,13 @@ public class Review {
 	private String name;
 	private String description;
 	private Long rating;
+	private String image;
 
-	public Review(String name, String description, Long rating) {
+	public Review(String name, String description, Long rating, String image) {
 		this.name = name;
 		this.description = description;
 		this.rating = rating;
+		this.image = image;
 	}
 
 	public String getName() {
@@ -22,6 +24,10 @@ public class Review {
 
 	public Long getRating() {
 		return rating;
+	}
+
+	public String getImage() {
+		return image;
 	}
 
 }

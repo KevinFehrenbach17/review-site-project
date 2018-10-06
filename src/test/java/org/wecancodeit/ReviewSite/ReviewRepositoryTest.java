@@ -16,7 +16,7 @@ public class ReviewRepositoryTest {
 	@Test
 	public void shouldAcceptReviews() {
 		// Arrange
-		Review malibu = new Review("Malibu", "A cool sporty boat great for watersports!", 9L);
+		Review malibu = new Review("Malibu", "A cool sporty boat great for watersports!", 10L, "");
 		// act
 		int repoSizeBeforeAddding = reviewRepo.size();
 		reviewRepo.add(malibu);
@@ -29,10 +29,11 @@ public class ReviewRepositoryTest {
 	@Test
 	public void shouldReturnOneReview() {
 		// Arrange
-		Review pontoon = new Review("Pontoon", "Perfect for kids or cracking open a cold one with the bois", 8L);
+		Review pontoon = new Review("Pontoon", "Perfect for kids or cracking open a cold one with the bois", 8L, "");
 
 		reviewRepo.add(pontoon);
 		Review result = reviewRepo.findOne(8L);
+		assertThat(result, is(pontoon));
 
 	}
 

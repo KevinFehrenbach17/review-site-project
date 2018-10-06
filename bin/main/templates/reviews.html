@@ -4,8 +4,8 @@
 <link href='https://fonts.googleapis.com/css?family=Bowlby One SC' rel='stylesheet'>
 
 <html xmlns:th="http://www.thymeleaf.org">
-<title th:text="${review.name}">Boat Reviews</title>
-	<link href ="review-site.css" rel="stylesheet" type="text/css">
+<title>Boat Reviews</title>
+	<!-- <link href ="review-site.css" rel="stylesheet" type="text/css"> -->
 <body>
   <header>
     <a href=#>Home</a>
@@ -13,7 +13,7 @@
     <a href=#>Contact Us</a>
   </header>
   <div id="title">
-    <h1 th:text="${review.name}">Boat Reviews</h1>
+    <h1>Boat Reviews</h1>
   </div>
 
   <div id="subtitle">
@@ -30,7 +30,7 @@
       <nav>
 
           <ul>
-                <li th:href="/reviews">Some Boats</li>
+                <!-- <li th:href="/reviews">Some Boats</li> -->
 
                 <li th:each="review : ${reviews}"><a th:href="|/reviews/${review.rating}|"th:text="${review.name}">Boat</a></li>
 
@@ -45,6 +45,6 @@
       <img class = "rboat"src ="http://www.wakeworld.com/news/images/BoatGuide519.jpg"></img>
 
       
-    <footer>fuck your chicken strips</footer>
+    <footer>WeCanCodeIt</footer>
 
 </html>

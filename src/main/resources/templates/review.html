@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title th:text="${review.name}">Review</title>
-	<!-- Do something useful with a students id -->
+<title th:text="${review.getName()}">Review</title>
+
+<!-- link href ="review-site.css" rel="stylesheet" type="text/css"-->
+
 </head>
 <body>
 	<header>
-		<h1 th:text="${review.name}">Review</h1><!-- Name -->
+		<h1 th:text="${review.getName()}">Review</h1>
+		<!-- Name -->
 		<nav>
 			<ul>
 				<li><a href="/reviews">Review</a></li>
@@ -14,15 +17,20 @@
 		</nav>
 	</header>
 	<main>
-		<h3 th:text="${review.description}">Description</h3><!-- favorite food -->
-		<!--
+	
+	<img th:src="${review.getImage()}">Image</img>
+	
+	<h3 th:text="${review.getDescription()}">Description</h3>
+	
+	<!-- favorite food --> <!--
 			This is (imo) the best way to concatenate
 			in Thymeleaf
 		-->
-		<h3 th:text="${review.rating}">rating</h3><!-- GitHub Link -->
-	</main>
+	<h3 th:text="${review.getRating()}">rating</h3>
+	
 	<footer>
 		<small>&copy; WCCI 2018</small>
 	</footer>
+	</main>
 </body>
 </html>
